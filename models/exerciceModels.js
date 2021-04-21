@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const ExerciceModels = mongoose.model(
-    "node-api",
+    "exercice",
     {
         codeExercice: {type: String, require: true},
         titre: {type: String, require: true},
@@ -11,7 +11,6 @@ const ExerciceModels = mongoose.model(
         tempsRepos: {type: String, require: true},
         numExo: {type: Number, require: true},
     },
-    "exercice",
 );
 
 module.exports = { ExerciceModels };

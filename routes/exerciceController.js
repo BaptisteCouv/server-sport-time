@@ -2,17 +2,13 @@ const express = require('express');
 const router = express.Router();
 // const ObjectID = require('mongoose') .Types.ObjectId;
 
-const ListExo = require('../models/listExerciceModels');
+const { ListExerciceModels } = require('../models/listExerciceModels');
 
 router.get('/', (req, res) => {
-    // ListExo.find((err, posts) => {
-    //     if(!err) res.send(posts);
-    //     else console.log("Error to get data : " + err);
-    // })
-    console.log(res)
-    Thing.find()
-        .then(things => res.status(200).json(things))
-        .catch(error => res.status(400).json({ error }));
+    ListExerciceModels.find((err, posts) => {
+        if(!err) res.send(posts);
+        else console.log("Error to get data : " + err);
+    })
 });
 
 router.post('/', (req, res) => {

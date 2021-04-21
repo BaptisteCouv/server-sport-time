@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-const listExerciceModels = new mongoose.Schema(
+const ListExerciceModels = mongoose.model(
+    "listExercice",
     {
         titre: {type: String, require: true},
         codeExo: {type: String, require: true},
@@ -9,4 +10,4 @@ const listExerciceModels = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model('ListExo', listExerciceModels);
+module.exports = {ListExerciceModels};

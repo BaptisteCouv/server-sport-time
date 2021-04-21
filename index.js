@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
 
+const addExercices = require('./routes/AddExerciceController.js');
+const listeExercices = require('./routes/exerciceController.js');
 
 require('./models/dataBaseConfig');
 
@@ -15,10 +17,8 @@ app.use((req, res, next) => {
 // parse application/json
 app.use(bodyParser.json())
 
-const addExercices = require('./routes/AddExerciceController.js');
-app.use('/listExercices', addExercices);
+app.use('/addExercice', addExercices);
 
-const listeExercices = require('./routes/exerciceController.js');
 app.use('/listExercice', listeExercices);
 
 app.listen(3000, function () {
